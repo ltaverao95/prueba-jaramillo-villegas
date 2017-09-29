@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BasculaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Duplicados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="variableSent" Type="nchar" MaxLength="10" />
+          <Property Name="dateSent" Type="date" />
+        </EntityType>
+        <EntityType Name="Variable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="variableSent" Type="nchar" MaxLength="10" />
+          <Property Name="dateSent" Type="date" />
+        </EntityType>
+        <Function Name="InserDataProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="variableSent" Type="varchar" Mode="In" />
+          <Parameter Name="dateSent" Type="date" Mode="In" />
+        </Function>
+        <EntityContainer Name="BasculaModelStoreContainer">
+          <EntitySet Name="Duplicados" EntityType="Self.Duplicados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Variable" EntityType="Self.Variable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BasculaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Duplicado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="variableSent" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="dateSent" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Variable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="variableSent" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="dateSent" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="BasculaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Duplicados" EntityType="Self.Duplicado" />
+          <EntitySet Name="Variables" EntityType="Self.Variable" />
+          <FunctionImport Name="InserDataProcedure">
+            <Parameter Name="variableSent" Mode="In" Type="String" />
+            <Parameter Name="dateSent" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BasculaModelStoreContainer" CdmEntityContainer="BasculaEntities">
+          <EntitySetMapping Name="Duplicados">
+            <EntityTypeMapping TypeName="BasculaModel.Duplicado">
+              <MappingFragment StoreEntitySet="Duplicados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="variableSent" ColumnName="variableSent" />
+                <ScalarProperty Name="dateSent" ColumnName="dateSent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Variables">
+            <EntityTypeMapping TypeName="BasculaModel.Variable">
+              <MappingFragment StoreEntitySet="Variable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="variableSent" ColumnName="variableSent" />
+                <ScalarProperty Name="dateSent" ColumnName="dateSent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InserDataProcedure" FunctionName="BasculaModel.Store.InserDataProcedure" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
