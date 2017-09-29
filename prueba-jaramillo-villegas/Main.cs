@@ -146,7 +146,6 @@ namespace prueba_jaramillo_villegas
                     for (int i = 0; i < currentDataList.Count; i++)
                     {
                         _dataTable.Rows.Add(null, currentDataList[i], DateTime.Now);
-                        
                         _dataBase.InserDataProcedure(currentDataList[i], DateTime.Now);
                     }
 
