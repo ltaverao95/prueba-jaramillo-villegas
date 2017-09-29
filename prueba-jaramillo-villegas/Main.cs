@@ -68,6 +68,17 @@ namespace prueba_jaramillo_villegas
             CloseConnection();
         }
 
+        private void btn_report_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            variableTableAdapter.Fill(basculaDataSet.Variable);
+        }
+
+        private void btn_back_main_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
         private void InitConnection()
         {
             try
@@ -220,5 +231,10 @@ namespace prueba_jaramillo_villegas
         }
 
         #endregion
+
+        private void dataGridResultQuery_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

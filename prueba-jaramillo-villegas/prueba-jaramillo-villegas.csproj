@@ -72,6 +72,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasculaDataSet.cs">
+      <DependentUpon>BasculaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BasculaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasculaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="DTO\StateObjectDTO.cs" />
     <Compile Include="EntityModels\BasculaModel.Context.cs">
@@ -119,6 +127,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BasculaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="BasculaDataSet.xsc">
+      <DependentUpon>BasculaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BasculaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BasculaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BasculaDataSet.xss">
+      <DependentUpon>BasculaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="EntityModels\BasculaModel.edmx.diagram">
       <DependentUpon>BasculaModel.edmx</DependentUpon>
     </None>
