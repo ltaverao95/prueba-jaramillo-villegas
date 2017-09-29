@@ -53,12 +53,24 @@ namespace prueba_jaramillo_villegas
 
         private void btn_init_con_Click(object sender, EventArgs e)
         {
+            if (_socket.Connected)
+            {
+                MessageBox.Show("Actualmente hay una conexión establecida");
+                return;
+            }
+
             InitConnection();
             ReceiveDataFromSocket();
         }
 
         private void btn_stop_connection_Click(object sender, EventArgs e)
         {
+            if(!_socket.Connected)
+            {
+                MessageBox.Show("Actualmente no hay una conexión establecida");
+                return;
+            }
+
             CloseConnection();
         }
 
@@ -88,7 +100,7 @@ namespace prueba_jaramillo_villegas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A ocurrido un error conectando con el socket");
+                MessageBox.Show("A ocurrido un error estableciendo la conexión");
             }
         }
 
@@ -106,7 +118,7 @@ namespace prueba_jaramillo_villegas
             }
             catch (Exception e)
             {
-                MessageBox.Show("A ocurrido un error conectando con el socket");
+                MessageBox.Show("A ocurrido un error estableciendo la conexión");
             }
         }
 
@@ -124,7 +136,7 @@ namespace prueba_jaramillo_villegas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A ocurrido un error desconectando con el socket");
+                MessageBox.Show("A ocurrido un error terminando la conexión");
             }
         }
 
@@ -145,7 +157,7 @@ namespace prueba_jaramillo_villegas
             }
             catch (Exception e)
             {
-                MessageBox.Show("A ocurrido un error conectando con el socket");
+                MessageBox.Show("A ocurrido un error terminando la conexión");
             }
         }
 
@@ -226,6 +238,8 @@ namespace prueba_jaramillo_villegas
 
         private void InitializeData()
         {
+            _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
             _connectDone = new ManualResetEvent(false);
             _closeDone = new ManualResetEvent(false);
             _receiveDone = new ManualResetEvent(false);
