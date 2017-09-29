@@ -11,5 +11,12 @@ namespace prueba_jaramillo_villegas.Common
         public const string HOST_IP = "127.0.0.1";
 
         public const int HOST_PORT = 1030;
+
+        public enum EnumRowOrder
+        {
+            asc = 0,
+
+            desc = 1
+        }
     }
 }

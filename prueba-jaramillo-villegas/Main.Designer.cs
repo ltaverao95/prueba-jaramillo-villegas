@@ -40,10 +40,10 @@
             this.variableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.basculaDataSet = new prueba_jaramillo_villegas.BasculaDataSet();
             this.variableTableAdapter = new prueba_jaramillo_villegas.BasculaDataSetTableAdapters.VariableTableAdapter();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.variableSent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateSent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad_duplicados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.variableSentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateSentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadduplicadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResults)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResultQuery)).BeginInit();
@@ -53,7 +53,7 @@
             // 
             // btn_init_con
             // 
-            this.btn_init_con.Location = new System.Drawing.Point(13, 13);
+            this.btn_init_con.Location = new System.Drawing.Point(12, 237);
             this.btn_init_con.Name = "btn_init_con";
             this.btn_init_con.Size = new System.Drawing.Size(75, 23);
             this.btn_init_con.TabIndex = 0;
@@ -67,7 +67,7 @@
             this.dataGridResults.AllowUserToDeleteRows = false;
             this.dataGridResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridResults.Location = new System.Drawing.Point(12, 43);
+            this.dataGridResults.Location = new System.Drawing.Point(12, 25);
             this.dataGridResults.MultiSelect = false;
             this.dataGridResults.Name = "dataGridResults";
             this.dataGridResults.ReadOnly = true;
@@ -78,14 +78,14 @@
             // lbl_con_result
             // 
             this.lbl_con_result.AutoSize = true;
-            this.lbl_con_result.Location = new System.Drawing.Point(13, 43);
+            this.lbl_con_result.Location = new System.Drawing.Point(12, 9);
             this.lbl_con_result.Name = "lbl_con_result";
             this.lbl_con_result.Size = new System.Drawing.Size(0, 13);
             this.lbl_con_result.TabIndex = 2;
             // 
             // btn_stop_connection
             // 
-            this.btn_stop_connection.Location = new System.Drawing.Point(95, 12);
+            this.btn_stop_connection.Location = new System.Drawing.Point(93, 237);
             this.btn_stop_connection.Name = "btn_stop_connection";
             this.btn_stop_connection.Size = new System.Drawing.Size(75, 23);
             this.btn_stop_connection.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             // btn_report
             // 
-            this.btn_report.Location = new System.Drawing.Point(13, 257);
+            this.btn_report.Location = new System.Drawing.Point(174, 237);
             this.btn_report.Name = "btn_report";
             this.btn_report.Size = new System.Drawing.Size(75, 23);
             this.btn_report.TabIndex = 4;
@@ -110,7 +110,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 291);
+            this.panel1.Size = new System.Drawing.Size(524, 273);
             this.panel1.TabIndex = 5;
             this.panel1.Visible = false;
             // 
@@ -131,18 +131,17 @@
             this.dataGridResultQuery.AutoGenerateColumns = false;
             this.dataGridResultQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridResultQuery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.variableSent,
-            this.dateSent,
-            this.cantidad_duplicados});
+            this.idDataGridViewTextBoxColumn,
+            this.variableSentDataGridViewTextBoxColumn,
+            this.dateSentDataGridViewTextBoxColumn,
+            this.cantidadduplicadosDataGridViewTextBoxColumn});
             this.dataGridResultQuery.DataSource = this.variableBindingSource;
             this.dataGridResultQuery.Location = new System.Drawing.Point(12, 12);
             this.dataGridResultQuery.MultiSelect = false;
             this.dataGridResultQuery.Name = "dataGridResultQuery";
             this.dataGridResultQuery.ReadOnly = true;
-            this.dataGridResultQuery.Size = new System.Drawing.Size(444, 226);
+            this.dataGridResultQuery.Size = new System.Drawing.Size(500, 226);
             this.dataGridResultQuery.TabIndex = 0;
-            this.dataGridResultQuery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridResultQuery_CellContentClick);
             // 
             // variableBindingSource
             // 
@@ -158,43 +157,44 @@
             // 
             this.variableTableAdapter.ClearBeforeFill = true;
             // 
-            // Id
+            // idDataGridViewTextBoxColumn
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // variableSent
+            // variableSentDataGridViewTextBoxColumn
             // 
-            this.variableSent.DataPropertyName = "variableSent";
-            this.variableSent.HeaderText = "variableSent";
-            this.variableSent.Name = "variableSent";
-            this.variableSent.ReadOnly = true;
+            this.variableSentDataGridViewTextBoxColumn.DataPropertyName = "variableSent";
+            this.variableSentDataGridViewTextBoxColumn.HeaderText = "variableSent";
+            this.variableSentDataGridViewTextBoxColumn.Name = "variableSentDataGridViewTextBoxColumn";
+            this.variableSentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dateSent
+            // dateSentDataGridViewTextBoxColumn
             // 
-            this.dateSent.DataPropertyName = "dateSent";
-            this.dateSent.HeaderText = "dateSent";
-            this.dateSent.Name = "dateSent";
-            this.dateSent.ReadOnly = true;
+            this.dateSentDataGridViewTextBoxColumn.DataPropertyName = "dateSent";
+            this.dateSentDataGridViewTextBoxColumn.HeaderText = "dateSent";
+            this.dateSentDataGridViewTextBoxColumn.Name = "dateSentDataGridViewTextBoxColumn";
+            this.dateSentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // cantidad_duplicados
+            // cantidadduplicadosDataGridViewTextBoxColumn
             // 
-            this.cantidad_duplicados.DataPropertyName = "cantidad_duplicados";
-            this.cantidad_duplicados.HeaderText = "cantidad_duplicados";
-            this.cantidad_duplicados.Name = "cantidad_duplicados";
-            this.cantidad_duplicados.ReadOnly = true;
+            this.cantidadduplicadosDataGridViewTextBoxColumn.DataPropertyName = "cantidad_duplicados";
+            this.cantidadduplicadosDataGridViewTextBoxColumn.HeaderText = "cantidad_duplicados";
+            this.cantidadduplicadosDataGridViewTextBoxColumn.Name = "cantidadduplicadosDataGridViewTextBoxColumn";
+            this.cantidadduplicadosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Main
             // 
-            this.ClientSize = new System.Drawing.Size(470, 291);
+            this.ClientSize = new System.Drawing.Size(524, 273);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_report);
             this.Controls.Add(this.btn_stop_connection);
             this.Controls.Add(this.lbl_con_result);
             this.Controls.Add(this.dataGridResults);
             this.Controls.Add(this.btn_init_con);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "Main";
             this.Text = "Simulador";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -212,7 +212,6 @@
         private System.Windows.Forms.Button btn_init_con;
         private System.Windows.Forms.DataGridView dataGridResults;
         private System.Windows.Forms.Label lbl_con_result;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn variableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_stop_connection;
@@ -223,10 +222,10 @@
         private BasculaDataSet basculaDataSet;
         private System.Windows.Forms.BindingSource variableBindingSource;
         private BasculaDataSetTableAdapters.VariableTableAdapter variableTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn variableSent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateSent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_duplicados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn variableSentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateSentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadduplicadosDataGridViewTextBoxColumn;
     }
 }
 

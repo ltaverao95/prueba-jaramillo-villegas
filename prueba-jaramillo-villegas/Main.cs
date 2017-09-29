@@ -3,6 +3,8 @@ using prueba_jaramillo_villegas.DTO;
 using prueba_jaramillo_villegas.EntityModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Net;
@@ -45,16 +47,8 @@ namespace prueba_jaramillo_villegas
 
         private void Main_Load(object sender, EventArgs e)
         {
-            _connectDone = new ManualResetEvent(false);
-            _closeDone = new ManualResetEvent(false);
-            _receiveDone = new ManualResetEvent(false);
-            _sendDone = new ManualResetEvent(false);
-
-            _dataTable.Columns.Add("Id").AutoIncrement = true;
-            _dataTable.Columns.Add("variable").ColumnName = "Variable";
-            _dataTable.Columns.Add("date");
-
-            dataGridResults.DataSource = _dataTable;
+            InitializeData();
+            lbl_con_result.Text = "No Conectado";
         }
 
         private void btn_init_con_Click(object sender, EventArgs e)
@@ -230,11 +224,28 @@ namespace prueba_jaramillo_villegas
             }
         }
 
-        #endregion
-
-        private void dataGridResultQuery_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void InitializeData()
         {
+            _connectDone = new ManualResetEvent(false);
+            _closeDone = new ManualResetEvent(false);
+            _receiveDone = new ManualResetEvent(false);
+            _sendDone = new ManualResetEvent(false);
 
+            _dataTable.Columns.Add("Id").AutoIncrement = true;
+            _dataTable.Columns.Add("variable").ColumnName = ConfigurationManager.AppSettings.Get("SIMULADOR_NOMBRE_VARIABLE");
+            _dataTable.Columns.Add("date");
+
+            ListSortDirection direction = new ListSortDirection();
+
+            direction = int.Parse(ConfigurationManager.AppSettings.Get("SIMULADOR_ORDENAMIENTO_FILAS")) == 
+                        (int)Constants.EnumRowOrder.asc ? 
+                        direction = ListSortDirection.Ascending : 
+                        direction = ListSortDirection.Descending;
+
+            dataGridResults.DataSource = _dataTable;
+            dataGridResults.Sort(dataGridResults.Columns["variable"], direction);
         }
+
+        #endregion
     }
 }
