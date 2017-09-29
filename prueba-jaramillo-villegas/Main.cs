@@ -45,10 +45,6 @@ namespace prueba_jaramillo_villegas
 
         private void Main_Load(object sender, EventArgs e)
         {
-            _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            _ipAdd = IPAddress.Parse(Constants.HOST_IP);
-            _remoteEndPoint = new IPEndPoint(_ipAdd, Constants.HOST_PORT);
-
             _connectDone = new ManualResetEvent(false);
             _closeDone = new ManualResetEvent(false);
             _receiveDone = new ManualResetEvent(false);
@@ -67,10 +63,19 @@ namespace prueba_jaramillo_villegas
             ReceiveDataFromSocket();
         }
 
+        private void btn_stop_connection_Click(object sender, EventArgs e)
+        {
+            CloseConnection();
+        }
+
         private void InitConnection()
         {
             try
             {
+                _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                _ipAdd = IPAddress.Parse(Constants.HOST_IP);
+                _remoteEndPoint = new IPEndPoint(_ipAdd, Constants.HOST_PORT);
+
                 _socket.BeginConnect(_remoteEndPoint,
                                      new AsyncCallback(InitConnectionCallback), _socket);
 
@@ -82,17 +87,56 @@ namespace prueba_jaramillo_villegas
             }
         }
 
-        private void InitConnectionCallback(IAsyncResult ar)
+        private void InitConnectionCallback(IAsyncResult asyncResult)
         {
             try
             {
-                Socket client = (Socket)ar.AsyncState;
+                Socket client = (Socket)asyncResult.AsyncState;
 
-                client.EndConnect(ar);
+                client.EndConnect(asyncResult);
 
                 lbl_con_result.Text = string.Format("Conectado al socket {0}", client.RemoteEndPoint.ToString());
 
                 _connectDone.Set();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("A ocurrido un error conectando con el socket");
+            }
+        }
+
+        private void CloseConnection()
+        {
+            try
+            {
+                StateObjectDTO state = new StateObjectDTO();
+                state.workSocket = _socket;
+
+                _socket.BeginDisconnect(false, 
+                                        new AsyncCallback(CloseConnectionCallback), state);
+
+                _closeDone.WaitOne();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A ocurrido un error desconectando con el socket");
+            }
+        }
+
+        private void CloseConnectionCallback(IAsyncResult asyncResult)
+        {
+            try
+            {
+                StateObjectDTO state = (StateObjectDTO)asyncResult.AsyncState;
+                Socket client = state.workSocket;
+
+                client.EndDisconnect(asyncResult);
+
+                lbl_con_result.Text = "Conexión cerrada";
+
+                client.Disconnect(false);
+
+                _closeDone.Set();
             }
             catch (Exception e)
             {
@@ -116,14 +160,22 @@ namespace prueba_jaramillo_villegas
             }
         }
 
-        private void ReceiveDataFromSocketCallback(IAsyncResult ar)
+        private void ReceiveDataFromSocketCallback(IAsyncResult asyncResult)
         {
             try
             {
-                StateObjectDTO state = (StateObjectDTO)ar.AsyncState;
+                StateObjectDTO state = (StateObjectDTO)asyncResult.AsyncState;
                 Socket client = state.workSocket;
 
-                int bytesRead = client.EndReceive(ar);
+                if(!client.Connected)
+                {
+                    client.EndReceive(asyncResult);
+
+                    _receiveDone.Set();
+                    return;
+                }
+
+                int bytesRead = client.EndReceive(asyncResult);
                 if (bytesRead > 0)
                 {
                     if (state.stringBuilder.Length == 0)
@@ -156,10 +208,7 @@ namespace prueba_jaramillo_villegas
                 }
                 else
                 {
-                    if (state.stringBuilder.Length > 1)
-                    {
-                        string response = state.stringBuilder.ToString();
-                    }
+                    client.EndReceive(asyncResult);
 
                     _receiveDone.Set();
                 }

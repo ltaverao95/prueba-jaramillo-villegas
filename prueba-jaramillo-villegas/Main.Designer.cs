@@ -31,6 +31,7 @@
             this.btn_init_con = new System.Windows.Forms.Button();
             this.dataGridResults = new System.Windows.Forms.DataGridView();
             this.lbl_con_result = new System.Windows.Forms.Label();
+            this.btn_stop_connection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridResults)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,9 +67,20 @@
             this.lbl_con_result.Size = new System.Drawing.Size(0, 13);
             this.lbl_con_result.TabIndex = 2;
             // 
+            // btn_stop_connection
+            // 
+            this.btn_stop_connection.Location = new System.Drawing.Point(95, 12);
+            this.btn_stop_connection.Name = "btn_stop_connection";
+            this.btn_stop_connection.Size = new System.Drawing.Size(75, 23);
+            this.btn_stop_connection.TabIndex = 3;
+            this.btn_stop_connection.Text = "Detener";
+            this.btn_stop_connection.UseVisualStyleBackColor = true;
+            this.btn_stop_connection.Click += new System.EventHandler(this.btn_stop_connection_Click);
+            // 
             // Main
             // 
             this.ClientSize = new System.Drawing.Size(313, 276);
+            this.Controls.Add(this.btn_stop_connection);
             this.Controls.Add(this.lbl_con_result);
             this.Controls.Add(this.dataGridResults);
             this.Controls.Add(this.btn_init_con);
@@ -88,6 +100,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn variableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_stop_connection;
     }
 }
 
