@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BasculaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Duplicado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="variableSent" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dateSent" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Variable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="variableSent" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dateSent" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="BasculaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Duplicados" EntityType="Self.Duplicado" />
+    <EntitySet Name="Variables" EntityType="Self.Variable" />
+    <FunctionImport Name="InserDataProcedure">
+      <Parameter Name="variableSent" Mode="In" Type="String" />
+      <Parameter Name="dateSent" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

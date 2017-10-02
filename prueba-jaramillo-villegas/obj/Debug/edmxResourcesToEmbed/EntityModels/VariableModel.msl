@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="basculaModelStoreContainer" CdmEntityContainer="basculaEntities">
+    <EntitySetMapping Name="Variables">
+      <EntityTypeMapping TypeName="basculaModel.Variable">
+        <MappingFragment StoreEntitySet="Variable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="variable1" ColumnName="variable" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

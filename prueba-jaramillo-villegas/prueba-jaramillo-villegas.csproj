@@ -142,45 +142,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BasculaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\bascula.mdf.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\bascula_log.ldf.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\EntityFramework.dll.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\EntityFramework.SqlServer.dll.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\EntityModels\BasculaModel.Context.tt.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\EntityModels\BasculaModel.tt.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\prueba-jaramillo-villegas.application" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\prueba-jaramillo-villegas.exe.config.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\prueba-jaramillo-villegas.exe.deploy" />
-    <None Include="App\Application Files\prueba-jaramillo-villegas_1_0_0_3\prueba-jaramillo-villegas.exe.manifest" />
-    <None Include="App\BasculaPaso1\EventosGSEPublicar.cfg" />
-    <None Include="App\BasculaPaso1\GSE_CAP.INI" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20120915.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20120916.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20120917.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20120918.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20120919.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20121001.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20121003.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20121007.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20121011.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20121016.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20121102.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20130619.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20130824.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140209.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140225.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140316.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140320.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140423.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140424.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20140918.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20141022.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20150715.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20170927.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20170928.LOG" />
-    <None Include="App\BasculaPaso1\LOGDriver\Log_BasculaPaso1_20170929.LOG" />
-    <None Include="App\BasculaPaso1\ReportesSimulacion.bak" />
-    <None Include="App\prueba-jaramillo-villegas.application" />
     <None Include="BasculaDataSet.xsc">
       <DependentUpon>BasculaDataSet.xsd</DependentUpon>
     </None>
@@ -226,36 +187,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\BasculaPaso1\%40BloqueReportes.txt" />
-    <Content Include="App\BasculaPaso1\IntervaloSimulacion.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Copias\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120910.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Copias\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120911.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120914.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120915.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120917.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120918.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20120919.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121001.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121003.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121004.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121006.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121011.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121016.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20121102.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20130619.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20130824.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20140316.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20140320.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20140423.txt" />
-    <Content Include="App\BasculaPaso1\LogReportesSimulador\Log_ReporteEnviado_SimuladorGSE_BasculaPaso1_20140424.txt" />
-    <Content Include="App\BasculaPaso1\ReportesSimulacion 200.txt" />
-    <Content Include="App\BasculaPaso1\ReportesSimulacion 500.txt" />
-    <Content Include="App\BasculaPaso1\ReportesSimulacion Completos Sin Dups.txt" />
-    <Content Include="App\BasculaPaso1\ReportesSimulacionCompletos.txt" />
-    <Content Include="App\BasculaPaso1\ReportesSimulacionSinDuplicados.txt" />
-    <Content Include="App\BasculaPaso1\SetPointsSimulacion.txt" />
-    <Content Include="App\BasculaPaso1\SimuladorGSE.exe" />
-    <Content Include="App\BasculaPaso1\VariablesSimulacion.txt" />
     <Content Include="bascula.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -274,11 +205,7 @@
       <LastGenOutput>BasculaModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\BasculaPaso1\LOGPuertoCOM\" />
-    <Folder Include="App\BasculaPaso1\LOGReportes\" />
-    <Folder Include="App\BasculaPaso1\LOGSocketTransmit\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
